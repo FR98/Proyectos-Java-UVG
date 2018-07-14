@@ -2,12 +2,14 @@ package classes;
 
 public class Estudiante {
     //Atributos
-    private String nombre;
-    private Integer codigo;
+    private final String nombre;
+    private final Integer codigo;
 
     //Metodos
-    public Estudiante() {
-
+    public Estudiante(String name, Integer code) {
+        this.nombre = name;
+        this.codigo = code;
+        //new Estudiante(name, code);
     }
 
     public String getNombre() {
@@ -22,7 +24,7 @@ public class Estudiante {
     @Override
     public String toString() {
         return "Estudiante:" +
-                "Nombre: " + nombre +
-                "Codigo: " + codigo;
+                "Nombre: " + this.nombre +
+                "Codigo: " + this.codigo;
     }
 }
