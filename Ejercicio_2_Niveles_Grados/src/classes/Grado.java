@@ -1,6 +1,5 @@
 package classes;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 public class Grado {
@@ -22,6 +21,11 @@ public class Grado {
     }
 
     public void addEstudiante(Estudiante nuevoEstudiante) {
-        estudiantes.add(nuevoEstudiante);
+        this.estudiantes.add(nuevoEstudiante);
+    }
+
+    @Override
+    public String toString() {
+        return "Grado: " + this.nombre;
     }
 }
