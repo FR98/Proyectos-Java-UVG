@@ -1,7 +1,6 @@
 package main;
 
 import classes.*;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -55,6 +54,23 @@ public class Main {
                             input = new Scanner(System.in);
                             String nameGrado = input.nextLine();
 
+                            ArrayList<Grado> grados = nivel.getGrados();
+
+                            for (Grado grado : grados){
+                                if (grado.getNombre().equals(nameGrado)) {
+                                    System.out.println("Ingrese el nombre del estudiante: ");
+                                    input = new Scanner(System.in);
+                                    String nameEstudiante = input.nextLine();
+                                    System.out.println("Ingrese el codigo del estudiante: ");
+                                    input = new Scanner(System.in);
+                                    Integer codeEstudiante = input.nextInt();
+
+                                    grado.addEstudiante(new Estudiante(nameEstudiante, codeEstudiante));
+
+                                } else {
+                                    System.out.println("Grado no encontrado");
+                                }
+                            }
 
                         } else {
                             System.out.println("Nivel no encontrado");
@@ -76,6 +92,8 @@ public class Main {
 
                     break;
                 case 5:
+
+
                     break;
                 case 6:
                     continuar = false;

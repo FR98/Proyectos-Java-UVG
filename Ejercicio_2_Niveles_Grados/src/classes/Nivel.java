@@ -26,6 +26,6 @@ public class Nivel {
 
     @Override
     public String toString() {
-        return "" + this.nombre;
+        return "Nivel: " + this.nombre;
     }
 }

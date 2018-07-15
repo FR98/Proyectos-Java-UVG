@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Grado {
     //Atributos
-    private final String nombre;
+    private String nombre;
     private ArrayList<Estudiante> estudiantes = new ArrayList<>();
 
     //Metodos
@@ -26,6 +26,6 @@ public class Grado {
 
     @Override
     public String toString() {
-        return "" + this.nombre;
+        return "Grado: " + this.nombre;
     }
 }

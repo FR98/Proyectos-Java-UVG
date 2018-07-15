@@ -13,7 +13,6 @@ public class Estudiante {
 
     public String getNombre() {
         return this.nombre;
-
     }
 
     public int getCodigo() {
