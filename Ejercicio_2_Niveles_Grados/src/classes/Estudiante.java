@@ -9,7 +9,6 @@ public class Estudiante {
     public Estudiante(String name, Integer code) {
         this.nombre = name;
         this.codigo = code;
-        //new Estudiante(name, code);
     }
 
     public String getNombre() {

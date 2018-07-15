@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Nivel {
     //Atributos
     private String nombre;
-    private ArrayList grados;
+    private ArrayList<Grado> grados = new ArrayList<>();
 
     //Metodos
     public Nivel(String nameNivel) {
@@ -26,6 +26,6 @@ public class Nivel {
 
     @Override
     public String toString() {
-        return "Nivel: " + this.nombre;
+        return "" + this.nombre;
     }
 }
