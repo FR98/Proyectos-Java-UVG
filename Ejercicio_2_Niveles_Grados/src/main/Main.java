@@ -92,7 +92,30 @@ public class Main {
 
                     break;
                 case 5:
+                    System.out.println("Ingrese el nombre del nivel: ");
+                    input = new Scanner(System.in);
+                    nameNivel = input.nextLine();
 
+                    for (Nivel nivel : niveles) {
+                        if (nivel.getNombre().equals(nameNivel)) {
+                            System.out.println("Ingrese el nombre del grado");
+                            input = new Scanner(System.in);
+                            String nameGrado = input.nextLine();
+
+                            ArrayList<Grado> grados = nivel.getGrados();
+
+                            for (Grado grado : grados) {
+                                if (grado.getNombre().equals(nameGrado)) {
+                                    System.out.println(grado.getEstudiantes());
+                                } else {
+                                    System.out.println("Grado no encontrado");
+                                }
+                            }
+
+                        } else {
+                            System.out.println("Nivel no encontrado");
+                        }
+                    }
 
                     break;
                 case 6:

@@ -22,7 +22,7 @@ public class Estudiante {
     @Override
     public String toString() {
         return "Estudiante:" +
-                "Nombre: " + this.nombre +
+                "Nombre: " + this.nombre + " " +
                 "Codigo: " + this.codigo;
     }
 }
