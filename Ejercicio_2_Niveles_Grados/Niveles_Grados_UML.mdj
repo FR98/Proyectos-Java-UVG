@@ -61,7 +61,7 @@
 											"font": "Arial;13;1",
 											"left": 37,
 											"top": 39,
-											"width": 119.58349609375,
+											"width": 155.71435546875,
 											"height": 13,
 											"text": "Nivel"
 										},
@@ -96,7 +96,7 @@
 									"font": "Arial;13;0",
 									"left": 32,
 									"top": 32,
-									"width": 129.58349609375,
+									"width": 165.71435546875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFkmjP51rOfy10="
@@ -133,7 +133,7 @@
 											"font": "Arial;13;0",
 											"left": 37,
 											"top": 62,
-											"width": 119.58349609375,
+											"width": 155.71435546875,
 											"height": 13,
 											"text": "-Nombre: Str",
 											"horizontalAlignment": 0
@@ -150,7 +150,7 @@
 											"font": "Arial;13;0",
 											"left": 37,
 											"top": 77,
-											"width": 119.58349609375,
+											"width": 155.71435546875,
 											"height": 13,
 											"text": "-Grados: List",
 											"horizontalAlignment": 0
@@ -159,7 +159,7 @@
 									"font": "Arial;13;0",
 									"left": 32,
 									"top": 57,
-									"width": 129.58349609375,
+									"width": 165.71435546875,
 									"height": 38
 								},
 								{
@@ -184,7 +184,7 @@
 											"font": "Arial;13;0",
 											"left": 37,
 											"top": 100,
-											"width": 119.58349609375,
+											"width": 155.71435546875,
 											"height": 13,
 											"text": "+Nivel()",
 											"horizontalAlignment": 0
@@ -201,7 +201,7 @@
 											"font": "Arial;13;0",
 											"left": 37,
 											"top": 115,
-											"width": 119.58349609375,
+											"width": 155.71435546875,
 											"height": 13,
 											"text": "+getNombre(): str",
 											"horizontalAlignment": 0
@@ -218,7 +218,7 @@
 											"font": "Arial;13;0",
 											"left": 37,
 											"top": 130,
-											"width": 119.58349609375,
+											"width": 155.71435546875,
 											"height": 13,
 											"text": "+getGrados(): List",
 											"horizontalAlignment": 0
@@ -235,16 +235,16 @@
 											"font": "Arial;13;0",
 											"left": 37,
 											"top": 145,
-											"width": 119.58349609375,
+											"width": 155.71435546875,
 											"height": 13,
-											"text": "+newGrado(): Grado",
+											"text": "+newGrado(Grado): void",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 32,
 									"top": 95,
-									"width": 129.58349609375,
+									"width": 165.71435546875,
 									"height": 68
 								},
 								{
@@ -284,7 +284,7 @@
 							"containerChangeable": true,
 							"left": 32,
 							"top": 32,
-							"width": 129.58349609375,
+							"width": 165.71435546875,
 							"height": 131,
 							"nameCompartment": {
 								"$ref": "AAAAAAFkmjP51rOeGhU="
@@ -343,7 +343,7 @@
 											"font": "Arial;13;1",
 											"left": 213,
 											"top": 39,
-											"width": 170.18701171875,
+											"width": 191.876953125,
 											"height": 13,
 											"text": "Grado"
 										},
@@ -378,7 +378,7 @@
 									"font": "Arial;13;0",
 									"left": 208,
 									"top": 32,
-									"width": 180.18701171875,
+									"width": 201.876953125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFkmjVOUrPMoUw="
@@ -415,7 +415,7 @@
 											"font": "Arial;13;0",
 											"left": 213,
 											"top": 62,
-											"width": 170.18701171875,
+											"width": 191.876953125,
 											"height": 13,
 											"text": "-Nombre: Str",
 											"horizontalAlignment": 0
@@ -432,7 +432,7 @@
 											"font": "Arial;13;0",
 											"left": 213,
 											"top": 77,
-											"width": 170.18701171875,
+											"width": 191.876953125,
 											"height": 13,
 											"text": "-Estudiantes: List",
 											"horizontalAlignment": 0
@@ -441,7 +441,7 @@
 									"font": "Arial;13;0",
 									"left": 208,
 									"top": 57,
-									"width": 180.18701171875,
+									"width": 201.876953125,
 									"height": 38
 								},
 								{
@@ -466,7 +466,7 @@
 											"font": "Arial;13;0",
 											"left": 213,
 											"top": 100,
-											"width": 170.18701171875,
+											"width": 191.876953125,
 											"height": 13,
 											"text": "+Grado()",
 											"horizontalAlignment": 0
@@ -483,7 +483,7 @@
 											"font": "Arial;13;0",
 											"left": 213,
 											"top": 115,
-											"width": 170.18701171875,
+											"width": 191.876953125,
 											"height": 13,
 											"text": "+getNombre(): Str",
 											"horizontalAlignment": 0
@@ -500,7 +500,7 @@
 											"font": "Arial;13;0",
 											"left": 213,
 											"top": 130,
-											"width": 170.18701171875,
+											"width": 191.876953125,
 											"height": 13,
 											"text": "+getEstudiantes(): List",
 											"horizontalAlignment": 0
@@ -517,16 +517,16 @@
 											"font": "Arial;13;0",
 											"left": 213,
 											"top": 145,
-											"width": 170.18701171875,
+											"width": 191.876953125,
 											"height": 13,
-											"text": "+addEstudiante(): void",
+											"text": "+addEstudiante(Estudiante): void",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 208,
 									"top": 95,
-									"width": 180.18701171875,
+									"width": 201.876953125,
 									"height": 68
 								},
 								{
@@ -566,7 +566,7 @@
 							"containerChangeable": true,
 							"left": 208,
 							"top": 32,
-							"width": 180.18701171875,
+							"width": 201.876953125,
 							"height": 131,
 							"nameCompartment": {
 								"$ref": "AAAAAAFkmjVOUrPLu5U="
@@ -1577,13 +1577,19 @@
 							"parameters": [
 								{
 									"_type": "UMLParameter",
-									"_id": "AAAAAAFkmsMfrLLPXjA=",
+									"_id": "AAAAAAFkpiD4vvEhWPM=",
 									"_parent": {
 										"$ref": "AAAAAAFkmsLvKrLIjuo="
 									},
-									"type": {
-										"$ref": "AAAAAAFkmjVOUbPIW34="
+									"name": "Grado"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFkpiFG+fFWOBc=",
+									"_parent": {
+										"$ref": "AAAAAAFkmsLvKrLIjuo="
 									},
+									"type": "void",
 									"direction": "return"
 								}
 							]
@@ -1738,6 +1744,15 @@
 									},
 									"type": "void",
 									"direction": "return"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFkpjdNm/GVNqc=",
+									"_parent": {
+										"$ref": "AAAAAAFkmxD3I7LgoEA="
+									},
+									"name": "Estudiante",
+									"type": ""
 								}
 							]
 						}
