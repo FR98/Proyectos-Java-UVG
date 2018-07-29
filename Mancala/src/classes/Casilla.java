@@ -5,10 +5,10 @@ public class Casilla {
     private Integer columna;
     private PilaDeMonedas monedas;
 
-    public Casilla(int fila, int columna) {
+    public Casilla(int fila, int columna, int cantidad) {
         this.fila = fila;
         this.columna = columna;
-        this.monedas = new PilaDeMonedas(4);
+        this.monedas = new PilaDeMonedas(cantidad);
     }
 
     public PilaDeMonedas getPilaMonedas() {
