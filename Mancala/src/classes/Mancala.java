@@ -117,39 +117,45 @@ public class Mancala {
     }
 
     public boolean hayGanador() {
-        int suma = 0;
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 8; j++) {
-                if (i == 0 && j == 0) {
-                    suma += 0;
-                } else if (i == 0 && j == 7) {
-                    suma += 0;
-                } else if (i == 1 && j == 0) {
-                    suma += 0;
-                } else if (i == 1 && j == 7) {
-                    suma += 0;
-                } else {
-                    suma += this.tablero[i][j].getPilaMonedas().getCantidad();
-                }
-            }
+        int suma1 = 0;
+        int suma2 = 0;
+        for (int j = 1; j < 7; j++) {
+            suma1 += this.tablero[0][j].getPilaMonedas().getCantidad();
+            suma2 += this.tablero[1][j].getPilaMonedas().getCantidad();
         }
-        if (suma == 0) {
+        if ((suma1 + suma2) == 0) {
+            return true;
+        } else if (suma1 == 0) {
+            this.tablero[1][7].getPilaMonedas().setCantidad(this.tablero[1][7].getPilaMonedas().getCantidad() + suma2);
+            return true;
+        } else if (suma2 == 0) {
+            this.tablero[0][0].getPilaMonedas().setCantidad(this.tablero[0][0].getPilaMonedas().getCantidad() + suma1);
             return true;
         }
         return false;
     }
 
+    public String checkGanador() {
+        if (this.tablero[0][0].getPilaMonedas().getCantidad() > this.tablero[1][7].getPilaMonedas().getCantidad()) {
+            return "Ganador: Jugador 1";
+        } else if (this.tablero[0][0].getPilaMonedas().getCantidad() < this.tablero[1][7].getPilaMonedas().getCantidad()) {
+            return "Ganador: Jugador 2";
+        } else {
+            return "Empate";
+        }
+    }
+
     @Override
     public String toString() {
-        String mancala = "\n   A B C D E F   \n";
+        String mancala = "\n    A  B  C  D  E  F   \n";
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 8; j++) {
                 if (i == 0 && j == 7) {
-                    mancala += "| ";
+                    mancala += "|  ";
                 } else if (i == 1 && j == 0) {
-                    mancala += "| ";
+                    mancala += "|  ";
                 } else {
-                    mancala += "|" + this.tablero[i][j].getPilaMonedas().getCantidad();
+                    mancala += "|" + this.tablero[i][j].getPilaMonedas().getCantidad() + (this.tablero[i][j].getPilaMonedas().getCantidad() < 10 ? " " : "");
                 }
             }
             mancala += "|\n";

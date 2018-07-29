@@ -18,4 +18,8 @@ public class PilaDeMonedas {
     public void addMoneda() {
         cantidad += 1;
     }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
+    }
 }

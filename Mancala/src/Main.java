@@ -10,14 +10,14 @@ public class Main {
         Mancala nuevoMancala = new Mancala();
         Scanner input = new Scanner(System.in);
 
-        boolean ganador = nuevoMancala.hayGanador();
-
         do {
             System.out.println(nuevoMancala);
             System.out.println("Ingrese la posicion: ");
             String pos = input.nextLine();
             nuevoMancala.seleccionarCasilla(pos);
-        } while (!ganador);
+        } while (!nuevoMancala.hayGanador());
+
+        System.out.println(nuevoMancala.checkGanador());
 
     }
 }
