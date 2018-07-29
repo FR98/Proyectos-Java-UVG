@@ -56,13 +56,21 @@ public class Mancala {
 
             if (fila == 0) {
                 for (int j = (columna - 1); j >= 0; j--) {
-                    this.tablero[0][j].getPilaMonedas().addMoneda();
-                    monedas -= 1;
+                    if (monedas > 0) {
+                        this.tablero[0][j].getPilaMonedas().addMoneda();
+                        monedas -= 1;
+                    } else {
+                        break;
+                    }
                 }
             } else {
                 for (int j = (columna + 1); j <= 7; j++){
-                    this.tablero[1][j].getPilaMonedas().addMoneda();
-                    monedas -= 1;
+                    if (monedas > 0) {
+                        this.tablero[1][j].getPilaMonedas().addMoneda();
+                        monedas -= 1;
+                    } else {
+                        break;
+                    }
                 }
             }
 
@@ -71,13 +79,21 @@ public class Mancala {
                     fila = fila == 1 ? 0 : 1;
                     if (fila == 0) {
                         for (int j = 6; j >= 0; j--){
-                            this.tablero[0][j].getPilaMonedas().addMoneda();
-                            monedas -= 1;
+                            if (monedas > 0) {
+                                this.tablero[0][j].getPilaMonedas().addMoneda();
+                                monedas -= 1;
+                            } else {
+                                break;
+                            }
                         }
                     } else {
                         for (int j = 1; j <= 7; j++) {
-                            this.tablero[0][j].getPilaMonedas().addMoneda();
-                            monedas -= 1;
+                            if (monedas > 0) {
+                                this.tablero[0][j].getPilaMonedas().addMoneda();
+                                monedas -= 1;
+                            } else {
+                                break;
+                            }
                         }
                     }
                 } while (monedas > 0);
@@ -85,5 +101,22 @@ public class Mancala {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public String toString() {
+        String mancala = "Turno Jugador: " + (this.esTurnoJugador1 ? "1" : "2") + "\n";
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (i == 0 && j == 7) {
+                    mancala += "";
+                } else if (i == 1 && j == 0) {
+                    mancala += "";
+                } else {
+                    mancala += this.tablero[i][j].getPilaMonedas().getCantidad();
+                }
+            }
+        }
+        return mancala;
     }
 }
