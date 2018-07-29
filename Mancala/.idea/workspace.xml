@@ -27,11 +27,12 @@
       <file leaf-file-name="Mancala.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/classes/Mancala.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="97" column="26" lean-forward="true" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="26" />
+            <state relative-caret-position="238">
+              <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
               <folding>
                 <element signature="method#Mancala#0;class#Mancala#0" />
                 <element signature="method#seleccionarCasilla#0;class#Mancala#0" />
+                <element signature="method#turno#0;class#Mancala#0" />
                 <element signature="method#robarMonedas#0;class#Mancala#0" />
                 <element signature="method#hayGanador#0;class#Mancala#0" />
                 <element signature="method#checkGanador#0;class#Mancala#0" />
@@ -214,7 +215,7 @@
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
-      <window_info active="true" anchor="right" id="Run" order="8" visible="true" weight="0.27685326" />
+      <window_info anchor="right" id="Run" order="8" visible="true" weight="0.27685326" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32933104" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
@@ -277,6 +278,7 @@
           <folding>
             <element signature="method#Mancala#0;class#Mancala#0" />
             <element signature="method#seleccionarCasilla#0;class#Mancala#0" />
+            <element signature="method#turno#0;class#Mancala#0" />
             <element signature="method#robarMonedas#0;class#Mancala#0" />
             <element signature="method#hayGanador#0;class#Mancala#0" />
             <element signature="method#checkGanador#0;class#Mancala#0" />
@@ -318,11 +320,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/classes/Mancala.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="97" column="26" lean-forward="true" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="26" />
+        <state relative-caret-position="238">
+          <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
           <folding>
             <element signature="method#Mancala#0;class#Mancala#0" />
             <element signature="method#seleccionarCasilla#0;class#Mancala#0" />
+            <element signature="method#turno#0;class#Mancala#0" />
             <element signature="method#robarMonedas#0;class#Mancala#0" />
             <element signature="method#hayGanador#0;class#Mancala#0" />
             <element signature="method#checkGanador#0;class#Mancala#0" />

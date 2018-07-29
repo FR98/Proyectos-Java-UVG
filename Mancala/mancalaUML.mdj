@@ -61,7 +61,7 @@
 											"font": "Arial;13;1",
 											"left": 29,
 											"top": 55,
-											"width": 174.509765625,
+											"width": 199.83056640625,
 											"height": 13,
 											"text": "Mancala"
 										},
@@ -96,7 +96,7 @@
 									"font": "Arial;13;0",
 									"left": 24,
 									"top": 48,
-									"width": 184.509765625,
+									"width": 209.83056640625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFk4fD9026AwWM="
@@ -133,7 +133,7 @@
 											"font": "Arial;13;0",
 											"left": 29,
 											"top": 78,
-											"width": 174.509765625,
+											"width": 199.83056640625,
 											"height": 13,
 											"text": "-tablero: Casilla",
 											"horizontalAlignment": 0
@@ -150,9 +150,9 @@
 											"font": "Arial;13;0",
 											"left": 29,
 											"top": 93,
-											"width": 174.509765625,
+											"width": 199.83056640625,
 											"height": 13,
-											"text": "-esturnoJugador1: boolean",
+											"text": "-esTurnoJugador1: boolean",
 											"horizontalAlignment": 0
 										},
 										{
@@ -167,7 +167,7 @@
 											"font": "Arial;13;0",
 											"left": 29,
 											"top": 108,
-											"width": 174.509765625,
+											"width": 199.83056640625,
 											"height": 13,
 											"text": "-jugador1: Str",
 											"horizontalAlignment": 0
@@ -184,17 +184,51 @@
 											"font": "Arial;13;0",
 											"left": 29,
 											"top": 123,
-											"width": 174.509765625,
+											"width": 199.83056640625,
 											"height": 13,
 											"text": "-jugador2: Str",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFk6EsMV3ChDEk=",
+											"_parent": {
+												"$ref": "AAAAAAFk4fD9026ElPY="
+											},
+											"model": {
+												"$ref": "AAAAAAFk6EsMIXCe9DA="
+											},
+											"font": "Arial;13;0",
+											"left": 29,
+											"top": 138,
+											"width": 199.83056640625,
+											"height": 13,
+											"text": "-puntosJugador1: PilaDeMonedas",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFk6EtL0nCpX8Q=",
+											"_parent": {
+												"$ref": "AAAAAAFk4fD9026ElPY="
+											},
+											"model": {
+												"$ref": "AAAAAAFk6EtLnHCmG3Q="
+											},
+											"font": "Arial;13;0",
+											"left": 29,
+											"top": 153,
+											"width": 199.83056640625,
+											"height": 13,
+											"text": "-puntosJugador2: PilaDeMonedas",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 24,
 									"top": 73,
-									"width": 184.509765625,
-									"height": 68
+									"width": 209.83056640625,
+									"height": 98
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -217,8 +251,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 29,
-											"top": 146,
-											"width": 174.509765625,
+											"top": 176,
+											"width": 199.83056640625,
 											"height": 13,
 											"text": "+Mancala()",
 											"horizontalAlignment": 0
@@ -234,8 +268,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 29,
-											"top": 161,
-											"width": 174.509765625,
+											"top": 191,
+											"width": 199.83056640625,
 											"height": 13,
 											"text": "+seleccionarCasilla(): boolean",
 											"horizontalAlignment": 0
@@ -251,10 +285,10 @@
 											},
 											"font": "Arial;13;0",
 											"left": 29,
-											"top": 176,
-											"width": 174.509765625,
+											"top": 206,
+											"width": 199.83056640625,
 											"height": 13,
-											"text": "+turno(): void",
+											"text": "-turno(): void",
 											"horizontalAlignment": 0
 										},
 										{
@@ -268,8 +302,8 @@
 											},
 											"font": "Arial;13;0",
 											"left": 29,
-											"top": 191,
-											"width": 174.509765625,
+											"top": 221,
+											"width": 199.83056640625,
 											"height": 13,
 											"text": "+hayGanador(): boolean",
 											"horizontalAlignment": 0
@@ -285,18 +319,35 @@
 											},
 											"font": "Arial;13;0",
 											"left": 29,
-											"top": 206,
-											"width": 174.509765625,
+											"top": 236,
+											"width": 199.83056640625,
 											"height": 13,
 											"text": "+checkGanador(): Str",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFk6Evd6XCxj4s=",
+											"_parent": {
+												"$ref": "AAAAAAFk4fD9026FNMQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFk6EvdsXCuBSo="
+											},
+											"font": "Arial;13;0",
+											"left": 29,
+											"top": 251,
+											"width": 199.83056640625,
+											"height": 13,
+											"text": "-robarMonedas(): boolean",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 24,
-									"top": 141,
-									"width": 184.509765625,
-									"height": 83
+									"top": 171,
+									"width": 209.83056640625,
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -335,8 +386,8 @@
 							"containerChangeable": true,
 							"left": 24,
 							"top": 48,
-							"width": 184.509765625,
-							"height": 176,
+							"width": 209.83056640625,
+							"height": 221,
 							"nameCompartment": {
 								"$ref": "AAAAAAFk4fD9025/fag="
 							},
@@ -962,7 +1013,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFk4fD90W58ybs="
 							},
-							"name": "esturnoJugador1",
+							"name": "esTurnoJugador1",
 							"visibility": "private",
 							"type": "boolean"
 						},
@@ -985,6 +1036,30 @@
 							"name": "jugador2",
 							"visibility": "private",
 							"type": "Str"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFk6EsMIXCe9DA=",
+							"_parent": {
+								"$ref": "AAAAAAFk4fD90W58ybs="
+							},
+							"name": "puntosJugador1",
+							"visibility": "private",
+							"type": {
+								"$ref": "AAAAAAFk4fFLJG7QxWc="
+							}
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFk6EtLnHCmG3Q=",
+							"_parent": {
+								"$ref": "AAAAAAFk4fD90W58ybs="
+							},
+							"name": "puntosJugador2",
+							"visibility": "private",
+							"type": {
+								"$ref": "AAAAAAFk4fFLJG7QxWc="
+							}
 						}
 					],
 					"operations": [
@@ -1022,6 +1097,7 @@
 								"$ref": "AAAAAAFk4fD90W58ybs="
 							},
 							"name": "turno",
+							"visibility": "private",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -1068,6 +1144,26 @@
 										"$ref": "AAAAAAFk52MZhXCUCes="
 									},
 									"type": "Str",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFk6EvdsXCuBSo=",
+							"_parent": {
+								"$ref": "AAAAAAFk4fD90W58ybs="
+							},
+							"name": "robarMonedas",
+							"visibility": "private",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFk6EwDnnC1uKg=",
+									"_parent": {
+										"$ref": "AAAAAAFk6EvdsXCuBSo="
+									},
+									"type": "boolean",
 									"direction": "return"
 								}
 							]
