@@ -5,6 +5,8 @@ public class Mancala {
     private boolean esTurnoJugador1;
     private String jugador1;
     private String jugador2;
+    private PilaDeMonedas puntosJugador1;
+    private PilaDeMonedas puntosJugador2;
 
     public Mancala(String j1, String j2) {
         this.tablero = new Casilla[2][8];
@@ -27,6 +29,8 @@ public class Mancala {
                 }
             }
         }
+        this.puntosJugador1 = this.tablero[0][0].getPilaMonedas();
+        this.puntosJugador2 = this.tablero[1][7].getPilaMonedas();
     }
 
     public boolean seleccionarCasilla(String posicion){
@@ -54,7 +58,7 @@ public class Mancala {
         }
     }
 
-    public void turno(Casilla casilla) {
+    private void turno(Casilla casilla) {
         boolean repetirTurno = false;
         boolean robarMonedas = false;
         if (casilla.getPilaMonedas().getCantidad() != 0) {
@@ -74,10 +78,7 @@ public class Mancala {
                                 repetirTurno = true;
                             } else if (monedas == 1 && this.tablero[0][j].getPilaMonedas().getCantidad() == 0 && this.tablero[1][j].getPilaMonedas().getCantidad() != 0) {
                                 if (esTurnoJugador1) {
-                                    this.tablero[0][0].getPilaMonedas().setCantidad(this.tablero[0][0].getPilaMonedas().getCantidad() + 1 + this.tablero[1][j].getPilaMonedas().getCantidad());
-                                    this.tablero[1][j].getPilaMonedas().setCantidad(0);
-                                    this.tablero[0][j].getPilaMonedas().setCantidad(0);
-                                    robarMonedas = true;
+                                    robarMonedas = robarMonedas(j);
                                 }
                             }
                             if (robarMonedas) {
@@ -92,7 +93,7 @@ public class Mancala {
                     }
                 }
             } else {
-                for (int j = (columna + 1); j <= 7; j++){
+                for (int j = (columna + 1); j <= 7; j++) {
                     if (monedas > 0) {
                         if (j == 7 && esTurnoJugador1) {
                             System.out.print("");
@@ -101,10 +102,7 @@ public class Mancala {
                                 repetirTurno = true;
                             } else if (monedas == 1 && this.tablero[1][j].getPilaMonedas().getCantidad() == 0 && this.tablero[0][j].getPilaMonedas().getCantidad() != 0) {
                                 if (!esTurnoJugador1) {
-                                    this.tablero[1][7].getPilaMonedas().setCantidad(this.tablero[1][7].getPilaMonedas().getCantidad() + 1 + this.tablero[0][j].getPilaMonedas().getCantidad());
-                                    this.tablero[1][j].getPilaMonedas().setCantidad(0);
-                                    this.tablero[0][j].getPilaMonedas().setCantidad(0);
-                                    robarMonedas = true;
+                                    robarMonedas = robarMonedas(j);
                                 }
                             }
                             if (robarMonedas) {
@@ -133,10 +131,7 @@ public class Mancala {
                                         repetirTurno = true;
                                     } else if (monedas == 1 && this.tablero[0][j].getPilaMonedas().getCantidad() == 0 && this.tablero[1][j].getPilaMonedas().getCantidad() != 0) {
                                         if (esTurnoJugador1) {
-                                            this.tablero[0][0].getPilaMonedas().setCantidad(this.tablero[0][0].getPilaMonedas().getCantidad() + 1 + this.tablero[1][j].getPilaMonedas().getCantidad());
-                                            this.tablero[1][j].getPilaMonedas().setCantidad(0);
-                                            this.tablero[0][j].getPilaMonedas().setCantidad(0);
-                                            robarMonedas = true;
+                                            robarMonedas = robarMonedas(j);
                                         }
                                     }
                                     if (robarMonedas) {
@@ -160,10 +155,7 @@ public class Mancala {
                                         repetirTurno = true;
                                     } else if (monedas == 1 && this.tablero[1][j].getPilaMonedas().getCantidad() == 0 && this.tablero[0][j].getPilaMonedas().getCantidad() != 0) {
                                         if (!esTurnoJugador1) {
-                                            this.tablero[0][0].getPilaMonedas().setCantidad(this.tablero[0][0].getPilaMonedas().getCantidad() + 1 + this.tablero[0][j].getPilaMonedas().getCantidad());
-                                            this.tablero[1][j].getPilaMonedas().setCantidad(0);
-                                            this.tablero[0][j].getPilaMonedas().setCantidad(0);
-                                            robarMonedas = true;
+                                            robarMonedas = robarMonedas(j);
                                         }
                                     }
                                 }
@@ -186,6 +178,17 @@ public class Mancala {
         }
     }
 
+    private boolean robarMonedas(int columna) {
+        if (esTurnoJugador1) {
+            this.puntosJugador1.setCantidad(this.puntosJugador1.getCantidad() + 1 + this.tablero[1][columna].getPilaMonedas().getCantidad());
+        } else {
+            this.puntosJugador2.setCantidad(this.puntosJugador2.getCantidad() + 1 + this.tablero[0][columna].getPilaMonedas().getCantidad());
+        }
+        this.tablero[1][columna].getPilaMonedas().empty();
+        this.tablero[0][columna].getPilaMonedas().empty();
+        return true;
+    }
+
     public boolean hayGanador() {
         int suma1 = 0;
         int suma2 = 0;
@@ -196,19 +199,19 @@ public class Mancala {
         if ((suma1 + suma2) == 0) {
             return true;
         } else if (suma1 == 0) {
-            this.tablero[1][7].getPilaMonedas().setCantidad(this.tablero[1][7].getPilaMonedas().getCantidad() + suma2);
+            this.puntosJugador2.setCantidad(this.puntosJugador2.getCantidad() + suma2);
             return true;
         } else if (suma2 == 0) {
-            this.tablero[0][0].getPilaMonedas().setCantidad(this.tablero[0][0].getPilaMonedas().getCantidad() + suma1);
+            this.puntosJugador1.setCantidad(this.puntosJugador1.getCantidad() + suma1);
             return true;
         }
         return false;
     }
 
     public String checkGanador() {
-        if (this.tablero[0][0].getPilaMonedas().getCantidad() > this.tablero[1][7].getPilaMonedas().getCantidad()) {
+        if (this.puntosJugador1.getCantidad() > this.puntosJugador2.getCantidad()) {
             return "Ganador: " + this.jugador1;
-        } else if (this.tablero[0][0].getPilaMonedas().getCantidad() < this.tablero[1][7].getPilaMonedas().getCantidad()) {
+        } else if (this.puntosJugador1.getCantidad() < this.puntosJugador2.getCantidad()) {
             return "Ganador: " + this.jugador2;
         } else {
             return "Empate";
