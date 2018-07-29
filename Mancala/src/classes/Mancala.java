@@ -3,10 +3,14 @@ package classes;
 public class Mancala {
     private Casilla[][] tablero;
     private boolean esTurnoJugador1;
+    private String jugador1;
+    private String jugador2;
 
-    public Mancala() {
+    public Mancala(String j1, String j2) {
         this.tablero = new Casilla[2][8];
         esTurnoJugador1 = true;
+        this.jugador1 = j1;
+        this.jugador2 = j2;
 
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 8; j++) {
@@ -50,7 +54,8 @@ public class Mancala {
         }
     }
 
-    public boolean turno(Casilla casilla) {
+    public void turno(Casilla casilla) {
+        boolean repetirTurno = false;
         if (casilla.getPilaMonedas().getCantidad() != 0) {
             int monedas = casilla.getPilaMonedas().getCantidad();
             casilla.getPilaMonedas().empty();
@@ -61,8 +66,15 @@ public class Mancala {
             if (fila == 0) {
                 for (int j = (columna - 1); j >= 0; j--) {
                     if (monedas > 0) {
-                        this.tablero[0][j].getPilaMonedas().addMoneda();
-                        monedas -= 1;
+                        if (j == 0 && !esTurnoJugador1) {
+                            System.out.print("");
+                        } else {
+                            if (monedas == 1 && j == 0 && esTurnoJugador1) {
+                                repetirTurno = true;
+                            }
+                            this.tablero[0][j].getPilaMonedas().addMoneda();
+                            monedas -= 1;
+                        }
                     } else {
                         break;
                     }
@@ -70,8 +82,15 @@ public class Mancala {
             } else {
                 for (int j = (columna + 1); j <= 7; j++){
                     if (monedas > 0) {
-                        this.tablero[1][j].getPilaMonedas().addMoneda();
-                        monedas -= 1;
+                        if (j == 7 && esTurnoJugador1) {
+                            System.out.print("");
+                        } else {
+                            if (monedas == 1 && j == 7 && !esTurnoJugador1) {
+                                repetirTurno = true;
+                            }
+                            this.tablero[1][j].getPilaMonedas().addMoneda();
+                            monedas -= 1;
+                        }
                     } else {
                         break;
                     }
@@ -87,6 +106,9 @@ public class Mancala {
                                 if (j == 0 && !esTurnoJugador1) {
                                     System.out.print("");
                                 } else {
+                                    if (monedas == 1 && j == 0 && esTurnoJugador1) {
+                                        repetirTurno = true;
+                                    }
                                     this.tablero[0][j].getPilaMonedas().addMoneda();
                                     monedas -= 1;
                                 }
@@ -100,6 +122,9 @@ public class Mancala {
                                 if (j == 7 && esTurnoJugador1) {
                                     System.out.print("");
                                 } else {
+                                    if (monedas == 1 && j == 7 && !esTurnoJugador1) {
+                                        repetirTurno = true;
+                                    }
                                     this.tablero[1][j].getPilaMonedas().addMoneda();
                                     monedas -= 1;
                                 }
@@ -110,10 +135,10 @@ public class Mancala {
                     }
                 } while (monedas > 0);
             }
-            this.esTurnoJugador1 = !this.esTurnoJugador1;
-            return true;
+            if (!repetirTurno) {
+                this.esTurnoJugador1 = !this.esTurnoJugador1;
+            }
         }
-        return false;
     }
 
     public boolean hayGanador() {
@@ -137,9 +162,9 @@ public class Mancala {
 
     public String checkGanador() {
         if (this.tablero[0][0].getPilaMonedas().getCantidad() > this.tablero[1][7].getPilaMonedas().getCantidad()) {
-            return "Ganador: Jugador 1";
+            return "Ganador: " + this.jugador1;
         } else if (this.tablero[0][0].getPilaMonedas().getCantidad() < this.tablero[1][7].getPilaMonedas().getCantidad()) {
-            return "Ganador: Jugador 2";
+            return "Ganador: " + this.jugador2;
         } else {
             return "Empate";
         }
@@ -160,7 +185,7 @@ public class Mancala {
             }
             mancala += "|\n";
         }
-        mancala += "Turno Jugador: " + (this.esTurnoJugador1 ? "1" : "2");
+        mancala += "Turno de " + (this.esTurnoJugador1 ? this.jugador1 : this.jugador2);
         return mancala;
     }
 }

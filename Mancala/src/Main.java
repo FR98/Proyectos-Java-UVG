@@ -1,14 +1,17 @@
-//Francisco Rosal
+//Francisco Rosal 18676
 
 import classes.Mancala;
-
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Mancala");
-        Mancala nuevoMancala = new Mancala();
         Scanner input = new Scanner(System.in);
+        System.out.println("\tMANCALA");
+        System.out.println("Ingrese el nombre del jugador 1: ");
+        String jugador1 = input.nextLine();
+        System.out.println("Ingrese el nombre del jugador 2: ");
+        String jugador2 = input.nextLine();
+        Mancala nuevoMancala = new Mancala(jugador1, jugador2);
 
         do {
             System.out.println(nuevoMancala);
@@ -17,7 +20,6 @@ public class Main {
             nuevoMancala.seleccionarCasilla(pos);
         } while (!nuevoMancala.hayGanador());
 
-        System.out.println(nuevoMancala.checkGanador());
-
+        System.out.println("\n" + nuevoMancala.checkGanador());
     }
 }
