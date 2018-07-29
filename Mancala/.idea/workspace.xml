@@ -15,8 +15,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+            <state relative-caret-position="425">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -27,8 +27,16 @@
       <file leaf-file-name="Mancala.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/classes/Mancala.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="168" column="28" lean-forward="true" selection-start-line="168" selection-start-column="28" selection-end-line="168" selection-end-column="28" />
+            <state>
+              <caret lean-forward="true" />
+              <folding>
+                <element signature="method#Mancala#0;class#Mancala#0" />
+                <element signature="method#seleccionarCasilla#0;class#Mancala#0" />
+                <element signature="method#turno#0;class#Mancala#0" />
+                <element signature="method#hayGanador#0;class#Mancala#0" />
+                <element signature="method#checkGanador#0;class#Mancala#0" />
+                <element signature="method#toString#0;class#Mancala#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -36,8 +44,8 @@
       <file leaf-file-name="Casilla.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/classes/Casilla.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            <state relative-caret-position="102">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="e#318#319#0" expanded="true" />
                 <element signature="e#362#363#0" expanded="true" />
@@ -53,8 +61,8 @@
       <file leaf-file-name="PilaDeMonedas.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/classes/PilaDeMonedas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            <state relative-caret-position="68">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
               <folding>
                 <element signature="e#113#114#0" expanded="true" />
                 <element signature="e#154#155#0" expanded="true" />
@@ -211,7 +219,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="9" />
@@ -221,12 +228,12 @@
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="right" id="Run" order="8" visible="true" weight="0.3290469" />
+      <window_info active="true" anchor="right" id="Run" order="8" visible="true" weight="0.27685326" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32933104" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.12178517" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.09682299" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info id="UI Designer" order="1" />
@@ -268,8 +275,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        <state relative-caret-position="425">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -278,8 +285,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/classes/Casilla.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
           <folding>
             <element signature="e#318#319#0" expanded="true" />
             <element signature="e#362#363#0" expanded="true" />
@@ -293,8 +300,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/classes/PilaDeMonedas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#113#114#0" expanded="true" />
             <element signature="e#154#155#0" expanded="true" />
@@ -312,8 +319,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/classes/Mancala.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="168" column="28" lean-forward="true" selection-start-line="168" selection-start-column="28" selection-end-line="168" selection-end-column="28" />
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="method#Mancala#0;class#Mancala#0" />
+            <element signature="method#seleccionarCasilla#0;class#Mancala#0" />
+            <element signature="method#turno#0;class#Mancala#0" />
+            <element signature="method#hayGanador#0;class#Mancala#0" />
+            <element signature="method#checkGanador#0;class#Mancala#0" />
+            <element signature="method#toString#0;class#Mancala#0" />
+          </folding>
         </state>
       </provider>
     </entry>

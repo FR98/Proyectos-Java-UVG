@@ -8,7 +8,7 @@ public class Mancala {
 
     public Mancala(String j1, String j2) {
         this.tablero = new Casilla[2][8];
-        esTurnoJugador1 = true;
+        esTurnoJugador1 = false;
         this.jugador1 = j1;
         this.jugador2 = j2;
 
@@ -56,6 +56,7 @@ public class Mancala {
 
     public void turno(Casilla casilla) {
         boolean repetirTurno = false;
+        boolean robarMonedas = false;
         if (casilla.getPilaMonedas().getCantidad() != 0) {
             int monedas = casilla.getPilaMonedas().getCantidad();
             casilla.getPilaMonedas().empty();
@@ -71,9 +72,20 @@ public class Mancala {
                         } else {
                             if (monedas == 1 && j == 0 && esTurnoJugador1) {
                                 repetirTurno = true;
+                            } else if (monedas == 1 && this.tablero[0][j].getPilaMonedas().getCantidad() == 0 && this.tablero[1][j].getPilaMonedas().getCantidad() != 0) {
+                                if (esTurnoJugador1) {
+                                    this.tablero[0][0].getPilaMonedas().setCantidad(this.tablero[0][0].getPilaMonedas().getCantidad() + 1 + this.tablero[1][j].getPilaMonedas().getCantidad());
+                                    this.tablero[1][j].getPilaMonedas().setCantidad(0);
+                                    this.tablero[0][j].getPilaMonedas().setCantidad(0);
+                                    robarMonedas = true;
+                                }
                             }
-                            this.tablero[0][j].getPilaMonedas().addMoneda();
-                            monedas -= 1;
+                            if (robarMonedas) {
+                                monedas -= 1;
+                            } else {
+                                this.tablero[0][j].getPilaMonedas().addMoneda();
+                                monedas -= 1;
+                            }
                         }
                     } else {
                         break;
@@ -87,9 +99,20 @@ public class Mancala {
                         } else {
                             if (monedas == 1 && j == 7 && !esTurnoJugador1) {
                                 repetirTurno = true;
+                            } else if (monedas == 1 && this.tablero[1][j].getPilaMonedas().getCantidad() == 0 && this.tablero[0][j].getPilaMonedas().getCantidad() != 0) {
+                                if (!esTurnoJugador1) {
+                                    this.tablero[1][7].getPilaMonedas().setCantidad(this.tablero[1][7].getPilaMonedas().getCantidad() + 1 + this.tablero[0][j].getPilaMonedas().getCantidad());
+                                    this.tablero[1][j].getPilaMonedas().setCantidad(0);
+                                    this.tablero[0][j].getPilaMonedas().setCantidad(0);
+                                    robarMonedas = true;
+                                }
                             }
-                            this.tablero[1][j].getPilaMonedas().addMoneda();
-                            monedas -= 1;
+                            if (robarMonedas) {
+                                monedas -= 1;
+                            } else {
+                                this.tablero[1][j].getPilaMonedas().addMoneda();
+                                monedas -= 1;
+                            }
                         }
                     } else {
                         break;
@@ -108,9 +131,20 @@ public class Mancala {
                                 } else {
                                     if (monedas == 1 && j == 0 && esTurnoJugador1) {
                                         repetirTurno = true;
+                                    } else if (monedas == 1 && this.tablero[0][j].getPilaMonedas().getCantidad() == 0 && this.tablero[1][j].getPilaMonedas().getCantidad() != 0) {
+                                        if (esTurnoJugador1) {
+                                            this.tablero[0][0].getPilaMonedas().setCantidad(this.tablero[0][0].getPilaMonedas().getCantidad() + 1 + this.tablero[1][j].getPilaMonedas().getCantidad());
+                                            this.tablero[1][j].getPilaMonedas().setCantidad(0);
+                                            this.tablero[0][j].getPilaMonedas().setCantidad(0);
+                                            robarMonedas = true;
+                                        }
                                     }
-                                    this.tablero[0][j].getPilaMonedas().addMoneda();
-                                    monedas -= 1;
+                                    if (robarMonedas) {
+                                        monedas -= 1;
+                                    } else {
+                                        this.tablero[0][j].getPilaMonedas().addMoneda();
+                                        monedas -= 1;
+                                    }
                                 }
                             } else {
                                 break;
@@ -124,7 +158,18 @@ public class Mancala {
                                 } else {
                                     if (monedas == 1 && j == 7 && !esTurnoJugador1) {
                                         repetirTurno = true;
+                                    } else if (monedas == 1 && this.tablero[1][j].getPilaMonedas().getCantidad() == 0 && this.tablero[0][j].getPilaMonedas().getCantidad() != 0) {
+                                        if (!esTurnoJugador1) {
+                                            this.tablero[0][0].getPilaMonedas().setCantidad(this.tablero[0][0].getPilaMonedas().getCantidad() + 1 + this.tablero[0][j].getPilaMonedas().getCantidad());
+                                            this.tablero[1][j].getPilaMonedas().setCantidad(0);
+                                            this.tablero[0][j].getPilaMonedas().setCantidad(0);
+                                            robarMonedas = true;
+                                        }
                                     }
+                                }
+                                if (robarMonedas) {
+                                    monedas -= 1;
+                                } else {
                                     this.tablero[1][j].getPilaMonedas().addMoneda();
                                     monedas -= 1;
                                 }
