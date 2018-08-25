@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stage3_ListaDescrip.Controller">
+   <children>
+      <Button layoutX="14.0" layoutY="27.0" mnemonicParsing="false" text="&lt;" />
+      <Label layoutX="53.0" layoutY="22.0" prefHeight="34.0" prefWidth="215.0" text="Nombre de la Lista">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="nuevoItemButton" layoutX="398.0" layoutY="26.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Nuevo Item" />
+      <TableView fx:id="tablaListas" layoutX="14.0" layoutY="163.0" prefHeight="206.0" prefWidth="472.0">
+         <columns>
+            <TableColumn prefWidth="174.0" text="Artículo" />
+            <TableColumn prefWidth="57.0" text="Cantidad" />
+            <TableColumn prefWidth="76.0" text="Unitario" />
+            <TableColumn prefWidth="70.0" text="Total" />
+            <TableColumn prefWidth="94.0" text="Estado" />
+         </columns>
+      </TableView>
+      <Label layoutX="14.0" layoutY="67.0" prefHeight="85.0" prefWidth="472.0" text="Label" textAlignment="JUSTIFY" />
+      <Label layoutX="213.0" layoutY="388.0" prefHeight="25.0" prefWidth="83.0" text="Marcar como:" />
+      <Button fx:id="marcarCompradoButton" layoutX="398.0" layoutY="388.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Comprado" />
+      <Button fx:id="marcarPendienteButton" layoutX="306.0" layoutY="388.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Pendiente" />
+      <Button fx:id="eliminarItemButton" layoutX="398.0" layoutY="421.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Eliminar" />
+      <Label layoutX="39.0" layoutY="438.0" prefHeight="25.0" prefWidth="83.0" text="Pendiente:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="136.0" layoutY="438.0" prefHeight="25.0" prefWidth="83.0" text="Q.">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stage4_NuevoItem.Controller">
+   <children>
+      <Label layoutX="59.0" layoutY="24.0" prefHeight="57.0" prefWidth="260.0" text="Nuevo Item:">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <Button layoutX="25.0" layoutY="41.0" mnemonicParsing="false" text="&lt;" />
+      <Label layoutX="37.0" layoutY="96.0" prefHeight="17.0" prefWidth="70.0" text="Nombre:" />
+      <TextField layoutX="115.0" layoutY="92.0" prefHeight="25.0" prefWidth="374.0" />
+      <Label layoutX="37.0" layoutY="200.0" prefHeight="17.0" prefWidth="70.0" text="Precio:" />
+      <Label layoutX="37.0" layoutY="150.0" prefHeight="17.0" prefWidth="70.0" text="Cantidad:" />
+      <TextField layoutX="115.0" layoutY="196.0" prefHeight="25.0" prefWidth="374.0" />
+      <TextField layoutX="115.0" layoutY="146.0" prefHeight="25.0" prefWidth="374.0" />
+      <Button layoutX="363.0" layoutY="244.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Crear" />
+   </children>
+</AnchorPane>
