@@ -19,6 +19,6 @@
       <Label layoutX="27.0" layoutY="113.0" prefHeight="17.0" prefWidth="70.0" text="Descripcion:" />
       <TextField fx:id="inputNombreLista" layoutX="105.0" layoutY="82.0" prefHeight="25.0" prefWidth="374.0" />
       <TextArea fx:id="inputDescripLista" layoutX="105.0" layoutY="113.0" prefHeight="128.0" prefWidth="374.0" wrapText="true" />
-      <Button fx:id="crearListaButton" layoutX="378.0" layoutY="255.0" mnemonicParsing="false" onAction="#abrirCrearListaWindow" prefHeight="25.0" prefWidth="101.0" text="Crear" />
+      <Button fx:id="crearListaButton" layoutX="378.0" layoutY="255.0" mnemonicParsing="false" onAction="#crearLista" prefHeight="25.0" prefWidth="101.0" text="Crear" />
    </children>
 </AnchorPane>

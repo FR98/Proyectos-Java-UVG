@@ -26,32 +26,46 @@ public class Controller {
         }
     }
 
-    public void abrirCrearListaWindow(ActionEvent event) {
+    public void crearLista(ActionEvent event) {
+        //Crear nueva lista
         try {
-            //Carga la ventana
+            //Carga las ventanas nuevas
+            FXMLLoader loader1 = new FXMLLoader(getClass().getResource("/stage1_Listas/screen.fxml"));
+            Parent root1 = loader1.load();
+            Stage screen1 = new Stage();
+            screen1.setTitle("Lista Descripcion");
+            screen1.setScene(new Scene(root1, 500, 300));
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/stage3_ListaDescrip/screen.fxml"));
             Parent root = loader.load();
             Stage screen = new Stage();
             screen.setTitle("Lista Descripcion");
             screen.setScene(new Scene(root, 500, 500));
 
-            //Crear Lista
-            stage3_ListaDescrip.Controller listaDescripController = loader.getController();
+            //Se obtienen los valores ingresados
             String nombreListaNueva = inputNombreLista.getText();
             String descripListaNueva = inputDescripLista.getText();
 
             if (nombreListaNueva != null && descripListaNueva != null) {
-                listaDescripController.setScreen(new ListadeCompra(nombreListaNueva, descripListaNueva));
+                //Nueva lista con valores ingresados
+                ListadeCompra nuevaLista = new ListadeCompra(nombreListaNueva, descripListaNueva);
+                //Se agrega la lista a lista de listas
+                stage1_Listas.Controller listasController = loader1.getController();
+                listasController.addListToData(nuevaLista);
+                //Se manda la nueva lista a la pantalla de edicion de lista
+                stage3_ListaDescrip.Controller listaDescripController = loader.getController();
+                listaDescripController.setScreen(nuevaLista);
                 //Cierra ventana actual
                 ((Node)(event.getSource())).getScene().getWindow().hide();
-                //Muestra la ventana
+                //Muestra las ventanas nuevas
+                screen1.show();
                 screen.show();
             } else {
                 System.out.println("No hay elemento seleccionado");
             }
 
         } catch (Exception e)  {
-            System.out.println("No se pudo cargar la pagina");
+            System.out.println("No se pudo cargar la pagina "+e);
         }
     }
 }

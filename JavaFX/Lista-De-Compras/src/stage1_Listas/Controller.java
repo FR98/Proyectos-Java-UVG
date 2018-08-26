@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
@@ -26,11 +27,20 @@ public class Controller {
     @FXML
     private TableColumn columnaEstimados;
 
+    private ObservableList<ListadeCompra> data = FXCollections.observableArrayList(
+            new ListadeCompra("Super", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+    );
+
+    public void addListToData(ListadeCompra listaNueva) {
+        System.out.println("Lista creada");
+        this.data.add(listaNueva);
+    }
+
     public void initialize() {
 
-        ObservableList<ListadeCompra> data = FXCollections.observableArrayList(
+        /*ObservableList<ListadeCompra> data = FXCollections.observableArrayList(
                 new ListadeCompra("Super", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
-        );
+        );*/
 
         columnaNombres.setCellValueFactory(new PropertyValueFactory<ListadeCompra,String>("nombre"));
         columnaPendientes.setCellValueFactory(new PropertyValueFactory<ListadeCompra,String>("pendiente"));
@@ -46,6 +56,8 @@ public class Controller {
             Stage screen = new Stage();
             screen.setTitle("Nueva Lista");
             screen.setScene(new Scene(root, 500, 300));
+            //Cierra ventana actual
+            ((Node)(event.getSource())).getScene().getWindow().hide();
             //Muestra la ventana
             screen.show();
         } catch (Exception e)  {
