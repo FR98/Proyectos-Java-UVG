@@ -1,25 +1,53 @@
 package stage1_Listas;
 
 import classes.ListadeCompra;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class Controller {
+    //Se hace la conexion con los elementos graficos
     @FXML
     private TableView<ListadeCompra> tablaListas;
+    @FXML
+    private TableColumn columnaNombres;
+    @FXML
+    private TableColumn columnaFechas;
+    @FXML
+    private TableColumn columnaPendientes;
+    @FXML
+    private TableColumn columnaEstimados;
+
+    public void initialize() {
+
+        ObservableList<ListadeCompra> data = FXCollections.observableArrayList(
+                new ListadeCompra("Super", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+        );
+
+        columnaNombres.setCellValueFactory(new PropertyValueFactory<ListadeCompra,String>("nombre"));
+        columnaPendientes.setCellValueFactory(new PropertyValueFactory<ListadeCompra,String>("pendiente"));
+
+        tablaListas.setItems(data);
+    }
 
     public void abrirCrearNuevaListaWindow(ActionEvent event) {
         try {
-            Parent root1 = new FXMLLoader(getClass().getResource("/stage2_NuevaLista/screen2.fxml")).load();
-            Stage screen2 = new Stage();
-            screen2.setTitle("Nueva Lista");
-            screen2.setScene(new Scene(root1, 500, 300));
-            screen2.show();
+            //Carga la ventana
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/stage2_NuevaLista/screen.fxml"));
+            Parent root = loader.load();
+            Stage screen = new Stage();
+            screen.setTitle("Nueva Lista");
+            screen.setScene(new Scene(root, 500, 300));
+            //Muestra la ventana
+            screen.show();
         } catch (Exception e)  {
             System.out.println("No se pudo cargar la pagina");
         }
@@ -27,14 +55,29 @@ public class Controller {
 
     public void abrirEditarListaWindow(ActionEvent event) {
         try {
-            Parent root2 = new FXMLLoader(getClass().getResource("/stage3_ListaDescrip/screen3.fxml")).load();
-            Stage screen3 = new Stage();
-            screen3.setTitle("Lista");
-            screen3.setScene(new Scene(root2, 500, 500));
-            screen3.show();
+            //Carga la ventana
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/stage3_ListaDescrip/screen.fxml"));
+            Parent root = loader.load();
+            Stage screen = new Stage();
+            screen.setTitle("Lista");
+            screen.setScene(new Scene(root, 500, 500));
+
+            //Seleccion de Lista
+            stage3_ListaDescrip.Controller listaDescripController = loader.getController();
+            ListadeCompra selectedLista = tablaListas.getSelectionModel().getSelectedItem();
+            if (selectedLista != null) {
+                listaDescripController.setScreen(selectedLista);
+                //Muestra la ventana
+                screen.show();
+            } else {
+                System.out.println("No hay elemento seleccionado");
+            }
+
         } catch (Exception e)  {
             System.out.println("No se pudo cargar la pagina");
         }
     }
+
+
 
 }
