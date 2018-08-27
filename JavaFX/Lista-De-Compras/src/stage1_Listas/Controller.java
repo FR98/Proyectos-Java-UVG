@@ -27,39 +27,36 @@ public class Controller {
     @FXML
     private TableColumn columnaEstimados;
 
-    private ObservableList<ListadeCompra> data = FXCollections.observableArrayList(
-            new ListadeCompra("Super", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
-    );
+    private ObservableList<ListadeCompra> data = FXCollections.observableArrayList();
 
-    public void addListToData(ListadeCompra listaNueva) {
-        System.out.println("Lista creada");
-        this.data.add(listaNueva);
-    }
+    /*public Controller(ObservableList<ListadeCompra> data) {
+        this.data = data;
+    }*/
 
     public void initialize() {
-
-        /*ObservableList<ListadeCompra> data = FXCollections.observableArrayList(
-                new ListadeCompra("Super", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
-        );*/
-
         columnaNombres.setCellValueFactory(new PropertyValueFactory<ListadeCompra,String>("nombre"));
         columnaPendientes.setCellValueFactory(new PropertyValueFactory<ListadeCompra,String>("pendiente"));
-
         tablaListas.setItems(data);
     }
 
     public void abrirCrearNuevaListaWindow(ActionEvent event) {
         try {
             //Carga la ventana
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/stage2_NuevaLista/screen.fxml"));
-            Parent root = loader.load();
-            Stage screen = new Stage();
-            screen.setTitle("Nueva Lista");
-            screen.setScene(new Scene(root, 500, 300));
+            FXMLLoader loader2 = new FXMLLoader(getClass().getResource("/stage2_NuevaLista/screen.fxml"));
+            Parent root2 = loader2.load();
+            Stage screen2 = new Stage();
+            screen2.setTitle("Nueva Lista");
+            screen2.setScene(new Scene(root2, 500, 300));
             //Cierra ventana actual
-            ((Node)(event.getSource())).getScene().getWindow().hide();
+            //((Node)(event.getSource())).getScene().getWindow().hide();
             //Muestra la ventana
-            screen.show();
+            screen2.show();
+
+
+            stage2_NuevaLista.Controller nuevaListaController = loader2.getController();
+            //nuevaListaController.crearLista();
+
+
         } catch (Exception e)  {
             System.out.println("No se pudo cargar la pagina");
         }
@@ -68,19 +65,19 @@ public class Controller {
     public void abrirEditarListaWindow(ActionEvent event) {
         try {
             //Carga la ventana
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/stage3_ListaDescrip/screen.fxml"));
-            Parent root = loader.load();
-            Stage screen = new Stage();
-            screen.setTitle("Lista");
-            screen.setScene(new Scene(root, 500, 500));
+            FXMLLoader loader3 = new FXMLLoader(getClass().getResource("/stage3_ListaDescrip/screen.fxml"));
+            Parent root3 = loader3.load();
+            Stage screen3 = new Stage();
+            screen3.setTitle("Lista");
+            screen3.setScene(new Scene(root3, 500, 500));
 
             //Seleccion de Lista
-            stage3_ListaDescrip.Controller listaDescripController = loader.getController();
+            stage3_ListaDescrip.Controller listaDescripController = loader3.getController();
             ListadeCompra selectedLista = tablaListas.getSelectionModel().getSelectedItem();
             if (selectedLista != null) {
                 listaDescripController.setScreen(selectedLista);
                 //Muestra la ventana
-                screen.show();
+                screen3.show();
             } else {
                 System.out.println("No hay elemento seleccionado");
             }
@@ -90,6 +87,25 @@ public class Controller {
         }
     }
 
+    public void addListToData(ListadeCompra listaNueva) {
+        this.data.add(listaNueva);
+        //System.out.println(data);
+        //tablaListas.setItems(data);
+    }
 
+    public void eliminarLista(ActionEvent event) {
+        try {
+            //Seleccion de Lista
+            ListadeCompra selectedLista = tablaListas.getSelectionModel().getSelectedItem();
+            if (selectedLista != null) {
+                this.data.remove(selectedLista);
+            } else {
+                System.out.println("No hay elemento seleccionado");
+            }
+
+        } catch (Exception e)  {
+            System.out.println("No se pudo cargar la pagina");
+        }
+    }
 
 }

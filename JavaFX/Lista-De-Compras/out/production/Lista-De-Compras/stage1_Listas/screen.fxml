@@ -14,7 +14,7 @@
             <Font name="System Bold" size="24.0" />
          </font></Label>
       <Button fx:id="nuevaListaButton" layoutX="388.0" layoutY="16.0" mnemonicParsing="false" onAction="#abrirCrearNuevaListaWindow" prefHeight="25.0" prefWidth="83.0" text="Nueva" />
-      <Button fx:id="eliminarListaButton" layoutX="388.0" layoutY="263.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Eliminar" />
+      <Button fx:id="eliminarListaButton" layoutX="388.0" layoutY="263.0" mnemonicParsing="false" onAction="#eliminarLista" prefHeight="25.0" prefWidth="83.0" text="Eliminar" />
       <Button fx:id="editarListaButton" layoutX="289.0" layoutY="263.0" mnemonicParsing="false" onAction="#abrirEditarListaWindow" prefHeight="25.0" prefWidth="83.0" text="Editar" />
       <TableView fx:id="tablaListas" editable="true" layoutX="14.0" layoutY="49.0" prefHeight="206.0" prefWidth="472.0">
         <columns>
