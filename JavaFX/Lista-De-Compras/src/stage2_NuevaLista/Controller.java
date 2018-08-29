@@ -18,6 +18,12 @@ public class Controller {
     @FXML
     private TextArea inputDescripLista;
 
+    private ObservableList<ListadeCompra> data;
+
+    public void asignarData(ObservableList<ListadeCompra> data) {
+        this.data = data;
+    }
+
     public void retroceder(ActionEvent event) {
         try {
             //Cierra ventana actual
@@ -31,12 +37,8 @@ public class Controller {
         //Crear nueva lista
         try {
             //Carga las ventanas nuevas
-            /*FXMLLoader loader1 = new FXMLLoader(getClass().getResource("/stage1_Listas/screen.fxml"));
+            FXMLLoader loader1 = new FXMLLoader(getClass().getResource("/stage1_Listas/screen.fxml"));
             Parent root1 = loader1.load();
-            Stage screen1 = new Stage();
-            screen1.setTitle("Lista Descripcion");
-            screen1.setScene(new Scene(root1, 500, 300));
-            */
 
             FXMLLoader loader3 = new FXMLLoader(getClass().getResource("/stage3_ListaDescrip/screen.fxml"));
             Parent root3 = loader3.load();
@@ -53,16 +55,15 @@ public class Controller {
                 ListadeCompra nuevaLista = new ListadeCompra(nombreListaNueva, descripListaNueva);
                 //Se agrega la lista a lista de listas
                 //-----------------------------------------------------------------------------------
-                // stage1_Listas.Controller listasController = loader1.getController();
-                //listasController.addListToData(nuevaLista);
+                this.data.add(nuevaLista);
+                stage1_Listas.Controller listasController = loader1.getController();
+                listasController.setData(this.data);
                 //Se manda la nueva lista a la pantalla de edicion de lista
                 stage3_ListaDescrip.Controller listaDescripController = loader3.getController();
                 listaDescripController.setScreen(nuevaLista);
                 //Cierra ventana actual
                 ((Node)(event.getSource())).getScene().getWindow().hide();
                 //Muestra las ventanas nuevas
-                //----------------------------------------------------------------------------------
-                // screen1.show();
                 screen3.show();
             } else {
                 System.out.println("No hay elemento seleccionado");

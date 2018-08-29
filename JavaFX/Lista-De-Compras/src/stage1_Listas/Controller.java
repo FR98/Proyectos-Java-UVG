@@ -49,12 +49,12 @@ public class Controller {
             screen2.setScene(new Scene(root2, 500, 300));
             //Cierra ventana actual
             //((Node)(event.getSource())).getScene().getWindow().hide();
-            //Muestra la ventana
-            screen2.show();
-
 
             stage2_NuevaLista.Controller nuevaListaController = loader2.getController();
-            //nuevaListaController.crearLista();
+            nuevaListaController.asignarData(this.data);
+
+            //Muestra la ventana
+            screen2.show();
 
 
         } catch (Exception e)  {
@@ -87,10 +87,8 @@ public class Controller {
         }
     }
 
-    public void addListToData(ListadeCompra listaNueva) {
-        this.data.add(listaNueva);
-        //System.out.println(data);
-        //tablaListas.setItems(data);
+    public void setData(ObservableList<ListadeCompra> data) {
+        this.data = data;
     }
 
     public void eliminarLista(ActionEvent event) {
