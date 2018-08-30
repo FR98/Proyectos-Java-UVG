@@ -50,7 +50,7 @@ public class Controller {
     public void setScreen(ListadeCompra lista) {
         this.nombreLista.setText("Lista: " + lista.getNombre());
         this.descripcionLista.setText("Descripcion: " + lista.getDescripcion());
-        this.data2 = lista.getListaDeCompras();
+        //this.data2 = lista.getListaDeCompras();
     }
 
     public void abrirCrearItemWindow(ActionEvent event) {
