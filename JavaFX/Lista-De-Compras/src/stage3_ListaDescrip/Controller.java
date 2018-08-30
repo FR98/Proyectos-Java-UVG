@@ -104,4 +104,22 @@ public class Controller {
             System.out.println("No se pudo retroceder");
         }
     }
+
+    public void marcarPendiente(ActionEvent event) {
+        Item selectedItem = tablaLista.getSelectionModel().getSelectedItem();
+        if (selectedItem != null) {
+            selectedItem.marcarPendiente();
+        } else {
+            System.out.println("No hay elemento seleccionado");
+        }
+    }
+
+    public void marcarComprado(ActionEvent event) {
+        Item selectedItem = tablaLista.getSelectionModel().getSelectedItem();
+        if (selectedItem != null) {
+            selectedItem.marcarComprado();
+        } else {
+            System.out.println("No hay elemento seleccionado");
+        }
+    }
 }

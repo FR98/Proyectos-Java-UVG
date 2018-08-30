@@ -23,12 +23,12 @@
             <TableColumn fx:id="columnaCantidad" prefWidth="57.0" text="Cantidad" />
             <TableColumn fx:id="columnaUnitario" prefWidth="76.0" text="Unitario" />
             <TableColumn fx:id="columnaTotal" prefWidth="70.0" text="Total" />
-            <TableColumn fx:id="columnaEstado" prefWidth="94.0" text="Estado" />
+            <TableColumn fx:id="columnaEstado" prefWidth="94.0" text="Comprado" />
          </columns>
       </TableView>
       <Label layoutX="213.0" layoutY="388.0" prefHeight="25.0" prefWidth="83.0" text="Marcar como:" />
-      <Button fx:id="marcarCompradoButton" layoutX="398.0" layoutY="388.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Comprado" />
-      <Button fx:id="marcarPendienteButton" layoutX="306.0" layoutY="388.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Pendiente" />
+      <Button fx:id="marcarPendienteButton" layoutX="306.0" layoutY="388.0" mnemonicParsing="false" onAction="#marcarPendiente" prefHeight="25.0" prefWidth="83.0" text="Pendiente" />
+      <Button fx:id="marcarCompradoButton" layoutX="398.0" layoutY="388.0" mnemonicParsing="false" onAction="#marcarComprado" prefHeight="25.0" prefWidth="83.0" text="Comprado" />
       <Button fx:id="eliminarItemButton" layoutX="398.0" layoutY="421.0" mnemonicParsing="false" onAction="#eliminarItem" prefHeight="25.0" prefWidth="83.0" text="Eliminar" />
       <Label layoutX="39.0" layoutY="438.0" prefHeight="25.0" prefWidth="83.0" text="Pendiente:">
          <font>

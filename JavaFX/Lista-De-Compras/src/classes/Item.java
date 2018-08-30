@@ -38,11 +38,16 @@ public class Item {
         return this.total.get();
     }
 
-    public String getEstado() {
-        if (this.comprado.get()) {
-            return "Comprado";
-        }
-        return "Pendiente";
+    public Boolean getComprado() {
+        return comprado.get();
+    }
+
+    public void marcarComprado() {
+        this.comprado.set(true);
+    }
+
+    public void marcarPendiente() {
+        this.comprado.set(false);
     }
 
 }
