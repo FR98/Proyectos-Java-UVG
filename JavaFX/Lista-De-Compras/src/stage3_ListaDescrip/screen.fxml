@@ -16,14 +16,14 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="nuevoItemButton" layoutX="398.0" layoutY="26.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Nuevo Item" />
+      <Button fx:id="nuevoItemButton" layoutX="398.0" layoutY="26.0" mnemonicParsing="false" onAction="#abrirCrearItemWindow" prefHeight="25.0" prefWidth="83.0" text="Nuevo Item" />
       <TableView fx:id="tablaListas" layoutX="14.0" layoutY="163.0" prefHeight="206.0" prefWidth="472.0">
          <columns>
-            <TableColumn prefWidth="174.0" text="Artículo" />
-            <TableColumn prefWidth="57.0" text="Cantidad" />
-            <TableColumn prefWidth="76.0" text="Unitario" />
-            <TableColumn prefWidth="70.0" text="Total" />
-            <TableColumn prefWidth="94.0" text="Estado" />
+            <TableColumn fx:id="columnaArticulo" prefWidth="174.0" text="Artículo" />
+            <TableColumn fx:id="columnaCantidad" prefWidth="57.0" text="Cantidad" />
+            <TableColumn fx:id="columnaUnitario" prefWidth="76.0" text="Unitario" />
+            <TableColumn fx:id="columnaTotal" prefWidth="70.0" text="Total" />
+            <TableColumn fx:id="columnaEstado" prefWidth="94.0" text="Estado" />
          </columns>
       </TableView>
       <Label layoutX="213.0" layoutY="388.0" prefHeight="25.0" prefWidth="83.0" text="Marcar como:" />

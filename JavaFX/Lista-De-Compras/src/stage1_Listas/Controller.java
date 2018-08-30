@@ -6,7 +6,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
@@ -27,16 +26,14 @@ public class Controller {
     @FXML
     private TableColumn columnaEstimados;
 
-    private ObservableList<ListadeCompra> data = FXCollections.observableArrayList();
-
-    /*public Controller(ObservableList<ListadeCompra> data) {
-        this.data = data;
-    }*/
+    private ObservableList<ListadeCompra> dataPrincipal = FXCollections.observableArrayList();
 
     public void initialize() {
         columnaNombres.setCellValueFactory(new PropertyValueFactory<ListadeCompra,String>("nombre"));
-        columnaPendientes.setCellValueFactory(new PropertyValueFactory<ListadeCompra,String>("pendiente"));
-        tablaListas.setItems(data);
+        columnaFechas.setCellValueFactory(new PropertyValueFactory<ListadeCompra,String>("fecha"));
+        columnaPendientes.setCellValueFactory(new PropertyValueFactory<ListadeCompra,String>("pendientes"));
+        columnaEstimados.setCellValueFactory(new PropertyValueFactory<ListadeCompra,String>("estimado"));
+        tablaListas.setItems(dataPrincipal);
     }
 
     public void abrirCrearNuevaListaWindow(ActionEvent event) {
@@ -47,16 +44,13 @@ public class Controller {
             Stage screen2 = new Stage();
             screen2.setTitle("Nueva Lista");
             screen2.setScene(new Scene(root2, 500, 300));
-            //Cierra ventana actual
-            //((Node)(event.getSource())).getScene().getWindow().hide();
 
+            //Se manda informacion al segundo controlador
             stage2_NuevaLista.Controller nuevaListaController = loader2.getController();
-            nuevaListaController.asignarData(this.data);
+            nuevaListaController.asignarData(this.dataPrincipal);
 
             //Muestra la ventana
             screen2.show();
-
-
         } catch (Exception e)  {
             System.out.println("No se pudo cargar la pagina");
         }
@@ -88,7 +82,7 @@ public class Controller {
     }
 
     public void setData(ObservableList<ListadeCompra> data) {
-        this.data = data;
+        this.dataPrincipal = data;
     }
 
     public void eliminarLista(ActionEvent event) {
@@ -96,7 +90,7 @@ public class Controller {
             //Seleccion de Lista
             ListadeCompra selectedLista = tablaListas.getSelectionModel().getSelectedItem();
             if (selectedLista != null) {
-                this.data.remove(selectedLista);
+                this.dataPrincipal.remove(selectedLista);
             } else {
                 System.out.println("No hay elemento seleccionado");
             }

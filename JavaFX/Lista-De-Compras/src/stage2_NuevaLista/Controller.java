@@ -18,19 +18,10 @@ public class Controller {
     @FXML
     private TextArea inputDescripLista;
 
-    private ObservableList<ListadeCompra> data;
+    private ObservableList<ListadeCompra> dataPrincipal;
 
     public void asignarData(ObservableList<ListadeCompra> data) {
-        this.data = data;
-    }
-
-    public void retroceder(ActionEvent event) {
-        try {
-            //Cierra ventana actual
-            ((Node)(event.getSource())).getScene().getWindow().hide();
-        } catch (Exception e)  {
-            System.out.println("No se pudo cargar la pagina");
-        }
+        this.dataPrincipal = data;
     }
 
     public void crearLista(ActionEvent event) {
@@ -50,27 +41,38 @@ public class Controller {
             String nombreListaNueva = inputNombreLista.getText();
             String descripListaNueva = inputDescripLista.getText();
 
-            if (nombreListaNueva != null && descripListaNueva != null) {
+            if (inputNombreLista != null && inputDescripLista != null) {
                 //Nueva lista con valores ingresados
                 ListadeCompra nuevaLista = new ListadeCompra(nombreListaNueva, descripListaNueva);
+
                 //Se agrega la lista a lista de listas
-                //-----------------------------------------------------------------------------------
-                this.data.add(nuevaLista);
+                this.dataPrincipal.add(nuevaLista);
                 stage1_Listas.Controller listasController = loader1.getController();
-                listasController.setData(this.data);
+                listasController.setData(this.dataPrincipal);
+
                 //Se manda la nueva lista a la pantalla de edicion de lista
                 stage3_ListaDescrip.Controller listaDescripController = loader3.getController();
                 listaDescripController.setScreen(nuevaLista);
+
                 //Cierra ventana actual
                 ((Node)(event.getSource())).getScene().getWindow().hide();
                 //Muestra las ventanas nuevas
                 screen3.show();
             } else {
-                System.out.println("No hay elemento seleccionado");
+                System.out.println("Falta llenar un campo");
             }
 
         } catch (Exception e)  {
-            System.out.println("No se pudo cargar la pagina "+e);
+            System.out.println("No se pudo cargar la pagina");
+        }
+    }
+
+    public void retroceder(ActionEvent event) {
+        try {
+            //Cierra ventana actual
+            ((Node)(event.getSource())).getScene().getWindow().hide();
+        } catch (Exception e)  {
+            System.out.println("No se pudo retroceder");
         }
     }
 }
