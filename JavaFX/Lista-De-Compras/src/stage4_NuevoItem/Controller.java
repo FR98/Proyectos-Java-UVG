@@ -1,6 +1,7 @@
 package stage4_NuevoItem;
 
 import classes.Item;
+import classes.ListadeCompra;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,10 +18,12 @@ public class Controller {
     @FXML
     private TextField inputPrecioUnitario;
 
+    private ListadeCompra listadeCompras;
     private ObservableList<Item> data2;
 
-    public void asignarData(ObservableList<Item> data) {
+    public void asignarData(ObservableList<Item> data, ListadeCompra listadeCompra) {
         this.data2 = data;
+        this.listadeCompras = listadeCompra;
     }
 
     public void crearItem(ActionEvent event) {
@@ -41,6 +44,7 @@ public class Controller {
 
                 //Se agrega el item a la lista
                 this.data2.add(nuevoItem);
+                this.listadeCompras.setListaDeCompras(data2);
                 stage3_ListaDescrip.Controller listasController = loader3.getController();
                 listasController.setData(this.data2);
                 //listasController.cargar();

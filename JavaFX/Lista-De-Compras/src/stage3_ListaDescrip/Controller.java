@@ -23,7 +23,7 @@ public class Controller {
     @FXML
     private TextArea descripcionLista;
     @FXML
-    private TableView tablaLista;
+    private TableView<Item> tablaLista;
     @FXML
     private TableColumn columnaArticulo;
     @FXML
@@ -56,6 +56,7 @@ public class Controller {
 
     public void abrirCrearItemWindow(ActionEvent event) {
         try {
+            System.out.println(this.listadeCompras.getListaDeCompras());
             //Carga la ventana
             FXMLLoader loader4 = new FXMLLoader(getClass().getResource("/stage4_NuevoItem/screen.fxml"));
             Parent root4 = loader4.load();
@@ -65,7 +66,7 @@ public class Controller {
 
             //Se manda informacion al controlador
             stage4_NuevoItem.Controller nuevaListaController = loader4.getController();
-            nuevaListaController.asignarData(this.data2);
+            nuevaListaController.asignarData(this.data2, listadeCompras);
             //nuevaListaController.asignarData(this.listadeCompras.getListaDeCompras());
 
             //Muestra la ventana
@@ -78,12 +79,6 @@ public class Controller {
     public void setData(ObservableList<Item> data2) {
         this.data2 = data2;
         //this.listadeCompras.setListaDeCompras(data2);
-    }
-
-    public void cargar() {
-        this.listadeCompras.setListaDeCompras(data2);
-        System.out.println(listadeCompras.getListaDeCompras());
-        System.out.println(data2);
     }
 
     public void eliminarItem(ActionEvent event) {
