@@ -17,7 +17,7 @@
          </font>
       </Label>
       <Button fx:id="nuevoItemButton" layoutX="398.0" layoutY="26.0" mnemonicParsing="false" onAction="#abrirCrearItemWindow" prefHeight="25.0" prefWidth="83.0" text="Nuevo Item" />
-      <TableView fx:id="tablaListas" layoutX="14.0" layoutY="163.0" prefHeight="206.0" prefWidth="472.0">
+      <TableView fx:id="tablaLista" layoutX="14.0" layoutY="163.0" prefHeight="206.0" prefWidth="472.0">
          <columns>
             <TableColumn fx:id="columnaArticulo" prefWidth="174.0" text="Artículo" />
             <TableColumn fx:id="columnaCantidad" prefWidth="57.0" text="Cantidad" />
@@ -29,7 +29,7 @@
       <Label layoutX="213.0" layoutY="388.0" prefHeight="25.0" prefWidth="83.0" text="Marcar como:" />
       <Button fx:id="marcarCompradoButton" layoutX="398.0" layoutY="388.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Comprado" />
       <Button fx:id="marcarPendienteButton" layoutX="306.0" layoutY="388.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Pendiente" />
-      <Button fx:id="eliminarItemButton" layoutX="398.0" layoutY="421.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Eliminar" />
+      <Button fx:id="eliminarItemButton" layoutX="398.0" layoutY="421.0" mnemonicParsing="false" onAction="#eliminarItem" prefHeight="25.0" prefWidth="83.0" text="Eliminar" />
       <Label layoutX="39.0" layoutY="438.0" prefHeight="25.0" prefWidth="83.0" text="Pendiente:">
          <font>
             <Font name="System Bold" size="16.0" />

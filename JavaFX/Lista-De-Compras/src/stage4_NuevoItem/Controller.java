@@ -43,6 +43,7 @@ public class Controller {
                 this.data2.add(nuevoItem);
                 stage3_ListaDescrip.Controller listasController = loader3.getController();
                 listasController.setData(this.data2);
+                //listasController.cargar();
 
                 //Cierra ventana actual
                 ((Node)(event.getSource())).getScene().getWindow().hide();

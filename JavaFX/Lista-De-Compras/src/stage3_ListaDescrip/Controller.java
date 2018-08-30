@@ -23,7 +23,7 @@ public class Controller {
     @FXML
     private TextArea descripcionLista;
     @FXML
-    private TableView tablaListas;
+    private TableView tablaLista;
     @FXML
     private TableColumn columnaArticulo;
     @FXML
@@ -35,6 +35,7 @@ public class Controller {
     @FXML
     private TableColumn columnaEstado;
 
+    private ListadeCompra listadeCompras;
     private ObservableList<Item> data2 = FXCollections.observableArrayList();
 
     public void initialize() {
@@ -44,13 +45,13 @@ public class Controller {
         columnaUnitario.setCellValueFactory(new PropertyValueFactory<Item,String>("precioUnitario"));
         columnaTotal.setCellValueFactory(new PropertyValueFactory<Item,String>("total"));
         columnaEstado.setCellValueFactory(new PropertyValueFactory<Item,String>("comprado"));
-        tablaListas.setItems(data2);
+        tablaLista.setItems(data2);
     }
 
     public void setScreen(ListadeCompra lista) {
         this.nombreLista.setText("Lista: " + lista.getNombre());
         this.descripcionLista.setText("Descripcion: " + lista.getDescripcion());
-        //this.data2 = lista.getListaDeCompras();
+        this.listadeCompras = lista;
     }
 
     public void abrirCrearItemWindow(ActionEvent event) {
@@ -65,6 +66,7 @@ public class Controller {
             //Se manda informacion al controlador
             stage4_NuevoItem.Controller nuevaListaController = loader4.getController();
             nuevaListaController.asignarData(this.data2);
+            //nuevaListaController.asignarData(this.listadeCompras.getListaDeCompras());
 
             //Muestra la ventana
             screen4.show();
@@ -75,6 +77,28 @@ public class Controller {
 
     public void setData(ObservableList<Item> data2) {
         this.data2 = data2;
+        //this.listadeCompras.setListaDeCompras(data2);
+    }
+
+    public void cargar() {
+        this.listadeCompras.setListaDeCompras(data2);
+        System.out.println(listadeCompras.getListaDeCompras());
+        System.out.println(data2);
+    }
+
+    public void eliminarItem(ActionEvent event) {
+        try {
+            //Seleccion de Lista
+            Item selectedItem = (Item) tablaLista.getSelectionModel().getSelectedItem();
+            if (selectedItem != null) {
+                this.data2.remove(selectedItem);
+            } else {
+                System.out.println("No hay elemento seleccionado");
+            }
+
+        } catch (Exception e)  {
+            System.out.println("No se pudo cargar la pagina");
+        }
     }
 
     public void retroceder(ActionEvent event) {

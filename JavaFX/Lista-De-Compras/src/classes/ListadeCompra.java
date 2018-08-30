@@ -35,6 +35,10 @@ public class ListadeCompra {
         return listaDeCompras;
     }
 
+    public void setListaDeCompras(ObservableList<Item> listaDeCompras) {
+        this.listaDeCompras = listaDeCompras;
+    }
+
     public SimpleDateFormat getFecha() {
         return fecha;
     }
