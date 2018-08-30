@@ -31,6 +31,10 @@ public class ListadeCompra {
         return descripcion;
     }
 
+    public ObservableList<Item> getListaDeCompras() {
+        return listaDeCompras;
+    }
+
     public SimpleDateFormat getFecha() {
         return fecha;
     }

@@ -2,6 +2,7 @@ package stage3_ListaDescrip;
 
 import classes.Item;
 import classes.ListadeCompra;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,7 +35,7 @@ public class Controller {
     @FXML
     private TableColumn columnaEstado;
 
-    private ObservableList<Item> data2;
+    private ObservableList<Item> data2 = FXCollections.observableArrayList();
 
     public void initialize() {
         //-----------------------------------------------------------------------------------------------
@@ -49,6 +50,7 @@ public class Controller {
     public void setScreen(ListadeCompra lista) {
         this.nombreLista.setText("Lista: " + lista.getNombre());
         this.descripcionLista.setText("Descripcion: " + lista.getDescripcion());
+        this.data2 = lista.getListaDeCompras();
     }
 
     public void abrirCrearItemWindow(ActionEvent event) {
@@ -60,7 +62,7 @@ public class Controller {
             screen4.setTitle("Nueva Lista");
             screen4.setScene(new Scene(root4, 500, 300));
 
-            //Se manda informacion al segundo controlador
+            //Se manda informacion al controlador
             stage4_NuevoItem.Controller nuevaListaController = loader4.getController();
             nuevaListaController.asignarData(this.data2);
 

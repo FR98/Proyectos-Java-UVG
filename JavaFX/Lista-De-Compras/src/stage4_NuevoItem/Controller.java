@@ -35,13 +35,12 @@ public class Controller {
             Integer cantidad = Integer.parseInt(inputCantidad.getText());
             Double precio = Double.parseDouble(inputPrecioUnitario.getText());
 
-            if (inputNombreItem != null && inputCantidad != null && inputPrecioUnitario != null) {
+            if ((inputNombreItem != null) && (inputCantidad != null) && (inputPrecioUnitario != null)) {
                 //Nuevo item con valores ingresados
                 Item nuevoItem = new Item(nombreItem, cantidad, precio);
-                System.out.println(nuevoItem);
+
                 //Se agrega el item a la lista
                 this.data2.add(nuevoItem);
-                System.out.println("hosf");
                 stage3_ListaDescrip.Controller listasController = loader3.getController();
                 listasController.setData(this.data2);
 
@@ -52,7 +51,7 @@ public class Controller {
             }
 
         } catch (Exception e)  {
-            System.out.println("No se pudo cargar la pagina");
+            System.out.println("No se pudo cargar la pagina"+e);
         }
     }
 
